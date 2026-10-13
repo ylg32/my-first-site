@@ -1,0 +1,182 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find & Book Professional Therapists</title>
+    <!-- Loading Calendly's styles globally -->
+    <link href="https://calendly.com" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        header {
+            background-color: #0f172a;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+        .directory {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background-color: #cbd5e1;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .card h3 {
+            margin: 10px 0 5px 0;
+        }
+        .specialty {
+            color: #0284c7;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .bio {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .btn-book {
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s ease;
+        }
+        .btn-book:hover {
+            background-color: #0369a1;
+        }
+        /* Style for the Booking Section Widget */
+        #booking-section {
+            display: none; /* Hidden until clicked */
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+        #booking-section h3 {
+            text-align: center;
+            margin-top: 0;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MindSpace Network</h1>
+        <p>Connect with licensed, professional therapists online or in person.</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Available Specialists</h2>
+        
+        <div class="directory">
+            <!-- Therapist Card 1 -->
+            <div class="card">
+                <div class="avatar">🧠</div>
+                <h3>Dr Sarah Jenkins</h3>
+                <div class="specialty">Anxiety & Stress</div>
+                <p class="bio">Helping individuals navigate life changes, career burnout, and chronic stress management using cognitive behavioural frameworks.</p>
+                <button class="btn-book" onclick="openBooking('Dr Sarah Jenkins')">Book Online Session</button>
+            </div>
+
+            <!-- Therapist Card 2 -->
+            <div class="card">
+                <div class="avatar">🌱</div>
+                <h3>Marcus Vance, LMFT</h3>
+                <div class="specialty">Relationships & Family</div>
+                <p class="bio">Specialising in couples communication, conflict resolution, and rebuilding trust within family dynamics.</p>
+                <button class="btn-book" onclick="openBooking('Marcus Vance')">Book Online Session</button>
+            </div>
+        </div>
+
+        <!-- Hidden Booking Area that pops up on click -->
+        <div id="booking-section">
+            <h3 id="booking-target">Schedule Your Appointment</h3>
+            <!-- Calendly inline widget target slot -->
+            <div id="calendly-widget" style="min-width:320px;height:700px;"></div>
+        </div>
+    </div>
+
+    <!-- Loading Calendly's script execution engine globally -->
+    <script type="text/javascript" src="https://calendly.com"></script>
+
+    <script>
+        function openBooking(therapistName) {
+            // 1. Show the hidden calendar container panel box
+            const bookingBox = document.getElementById('booking-section');
+            bookingBox.style.display = 'block';
+            
+            // 2. Update the dynamic layout text banner element
+            document.getElementById('booking-target').innerText = "Schedule your session with " + therapistName;
+            
+            // 3. Clear out any broken elements sitting in the target area
+            const widgetContainer = document.getElementById('calendly-widget');
+            widgetContainer.innerHTML = ''; 
+            
+            // 4. Safely initialize Calendly inline using your exact verified link
+            Calendly.initInlineWidget({
+                url: 'https://calendly.com/ylgluck18/30min',
+                parentElement: widgetContainer
+            });
+            
+            // 5. Scroll smoothly straight to the interactive scheduling calendar frame grid
+            bookingBox.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
