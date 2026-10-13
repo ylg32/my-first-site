@@ -1,0 +1,73 @@
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website From Scratch</title>
+    <style>
+        /* CSS: Controls layouts, spacing, fonts, and colours */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+        }
+        main {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            min-height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HTML: Structuring the visible content -->
+    <header>
+        <h1>Welcome to My First Website</h1>
+        <p>Built completely from scratch using HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <main>
+        <h2>Interactive Elements</h2>
+        <p>Click the button below to trigger an action powered by JavaScript code execution.</p>
+        <button class="btn" onclick="showMessage()">Click Me!</button>
+        <p id="message"></p>
+    </main>
+
+    <!-- JavaScript: Adding interactive behaviour -->
+    <script>
+        function showMessage() {
+            const msgElement = document.getElementById('message');
+            msgElement.innerText = "🚀 Hello World! Your interactive code works perfectly.";
+        }
+    </script>
+
+</body>
+</html>
