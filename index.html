@@ -98,7 +98,7 @@ html
         }
         /* Style for the Booking Section Widget */
         #booking-section {
-            display: none; /* Stays hidden until a user clicks a button */
+            display: none; /* Hidden until clicked */
             background: white;
             padding: 30px;
             border-radius: 12px;
@@ -146,32 +146,34 @@ html
         <!-- Hidden Booking Area that pops up on click -->
         <div id="booking-section">
             <h3 id="booking-target">Schedule Your Appointment</h3>
-            <!-- Calendly inline widget begin -->
-            <div class="calendly-inline-widget" id="calendly-widget" style="min-width:320px;height:700px;"></div>
-            <!-- Calendly inline widget end -->
+            <!-- Calendly inline widget target slot -->
+            <div id="calendly-widget" style="min-width:320px;height:700px;"></div>
         </div>
     </div>
 
     <!-- Loading Calendly's script execution engine globally -->
-    <script type="text/javascript" src="https://calendly.com" async></script>
+    <script type="text/javascript" src="https://calendly.com"></script>
 
     <script>
         function openBooking(therapistName) {
-            // 1. Show the hidden calendar section container element
+            // 1. Show the hidden calendar container panel box
             const bookingBox = document.getElementById('booking-section');
             bookingBox.style.display = 'block';
             
-            // 2. Update the layout text header with the chosen target name
+            // 2. Update the dynamic layout text banner element
             document.getElementById('booking-target').innerText = "Schedule your session with " + therapistName;
             
-            // 3. RE-INJECT YOUR CALENDLY LINK HERE:
-            // Replace the URL inside the quotes below with your personal Calendly sharing link!
-            const yourCalendlyLink = "https://calendly.com/ylgluck18/30min"; 
+            // 3. Clear out any broken elements sitting in the target area
+            const widgetContainer = document.getElementById('calendly-widget');
+            widgetContainer.innerHTML = ''; 
             
-            const widget = document.getElementById('calendly-widget');
-            widget.setAttribute('data-url', yourCalendlyLink);
+            // 4. Safely initialize Calendly inline using your exact verified link
+            Calendly.initInlineWidget({
+                url: 'https://calendly.com/ylgluck18/30min',
+                parentElement: widgetContainer
+            });
             
-            // Scroll smoothly down straight to the interactive scheduling calendar frame setup
+            // 5. Scroll smoothly straight to the interactive scheduling calendar frame grid
             bookingBox.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
