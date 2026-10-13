@@ -1,11 +1,10 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find & Book Professional Therapists</title>
-    <!-- Loading Calendly's styles globally -->
+    <!-- 1. Load Calendly Stylesheet -->
     <link href="https://calendly.com" rel="stylesheet">
     <style>
         body {
@@ -96,21 +95,6 @@ html
         .btn-book:hover {
             background-color: #0369a1;
         }
-        /* Style for the Booking Section Widget */
-        #booking-section {
-            display: none; /* Hidden until clicked */
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
-        #booking-section h3 {
-            text-align: center;
-            margin-top: 0;
-            color: #1e293b;
-        }
     </style>
 </head>
 <body>
@@ -130,7 +114,8 @@ html
                 <h3>Dr Sarah Jenkins</h3>
                 <div class="specialty">Anxiety & Stress</div>
                 <p class="bio">Helping individuals navigate life changes, career burnout, and chronic stress management using cognitive behavioural frameworks.</p>
-                <button class="btn-book" onclick="openBooking('Dr Sarah Jenkins')">Book Online Session</button>
+                <!-- Triggers beautiful popup overlay natively -->
+                <button class="btn-book" onclick="Calendly.initPopupWidget({url: 'https://calendly.com'});return false;">Book Online Session</button>
             </div>
 
             <!-- Therapist Card 2 -->
@@ -139,44 +124,13 @@ html
                 <h3>Marcus Vance, LMFT</h3>
                 <div class="specialty">Relationships & Family</div>
                 <p class="bio">Specialising in couples communication, conflict resolution, and rebuilding trust within family dynamics.</p>
-                <button class="btn-book" onclick="openBooking('Marcus Vance')">Book Online Session</button>
+                <button class="btn-book" onclick="Calendly.initPopupWidget({url: 'https://calendly.com'});return false;">Book Online Session</button>
             </div>
-        </div>
-
-        <!-- Hidden Booking Area that pops up on click -->
-        <div id="booking-section">
-            <h3 id="booking-target">Schedule Your Appointment</h3>
-            <!-- Calendly inline widget target slot -->
-            <div id="calendly-widget" style="min-width:320px;height:700px;"></div>
         </div>
     </div>
 
-    <!-- Loading Calendly's script execution engine globally -->
-    <script type="text/javascript" src="https://calendly.com"></script>
-
-    <script>
-        function openBooking(therapistName) {
-            // 1. Show the hidden calendar container panel box
-            const bookingBox = document.getElementById('booking-section');
-            bookingBox.style.display = 'block';
-            
-            // 2. Update the dynamic layout text banner element
-            document.getElementById('booking-target').innerText = "Schedule your session with " + therapistName;
-            
-            // 3. Clear out any broken elements sitting in the target area
-            const widgetContainer = document.getElementById('calendly-widget');
-            widgetContainer.innerHTML = ''; 
-            
-            // 4. Safely initialize Calendly inline using your exact verified link
-            Calendly.initInlineWidget({
-                url: 'https://calendly.com/ylgluck18/30min',
-                parentElement: widgetContainer
-            });
-            
-            // 5. Scroll smoothly straight to the interactive scheduling calendar frame grid
-            bookingBox.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+    <!-- 2. Load Calendly Core Interaction Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
 
 </body>
 </html>
