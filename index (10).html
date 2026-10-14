@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Private Tuition | Academic Excellence</title>
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Premium Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Cinematic Fluid Moving Background Architecture */
+        .bg-gradient-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: #0f172a; /* Deep Slate Base */
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.45;
+            mix-blend-mode: screen;
+            animation: floatAround 25s infinite alternate ease-in-out;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #312e81 0%, transparent 70%);
+            top: -10%;
+            left: -10%;
+            animation-duration: 20s;
+        }
+
+        .orb-2 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #1e1b4b 0%, transparent 70%);
+            bottom: -20%;
+            right: -10%;
+            animation-duration: 28s;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, #4c1d95 0%, transparent 70%);
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 22s;
+            animation-delay: -10s;
+        }
+
+        @keyframes floatAround {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translate(60px, -40px) rotate(180deg) scale(1.15);
+            }
+            100% {
+                transform: translate(-40px, 50px) rotate(360deg) scale(0.9);
+            }
+        }
+
+        /* Glassmorphism Optimization */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-header {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-b: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Custom Scrollbar for the Scheduler Frame */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="text-slate-200 antialiased min-h-screen flex flex-col">
+
+    <!-- Dynamic Animated Background Layers -->
+    <div class="bg-gradient-canvas">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Premium Navigation Header Bar -->
+    <header class="glass-header sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Professional Concept Name (Hidden personal initials & price) -->
+            <div class="flex items-center gap-2.5 group">
+                <div class="h-9 w-9 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-indigo-400 group-hover:text-indigo-300 transition-colors">
+                    <i class="fa-solid fa-feather-pointed text-sm"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Apex<span class="text-indigo-400 font-medium">Academic</span></span>
+            </div>
+            
+            <div>
+                <a href="#booking-card" class="bg-white hover:bg-slate-100 text-slate-950 text-xs font-semibold px-5 py-2.5 rounded-xl transition-all shadow-lg hover:shadow-white/5 block">
+                    Book Placement
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Strategic Educational Copy Section -->
+    <section class="max-w-3xl mx-auto px-6 pt-16 pb-12 text-center space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium tracking-wide uppercase">
+            <i class="fa-solid fa-graduation-cap text-[10px]"></i> Key Stage 4 & 5 Specialist
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-2xl mx-auto">
+            Targeted 1-on-1 Tuition Built for Exam Success.
+        </h1>
+        <p class="text-sm sm:text-base text-slate-400 max-w-xl mx-auto leading-relaxed font-light">
+            Providing high-caliber academic coaching tailored to the rigorous demands of <span class="text-slate-200 font-medium">GCSE & A-Level curriculums</span>. Secure your required timeline using our real-time portal below.
+        </p>
+    </section>
+
+    <!-- Interactive Workspace Application Card -->
+    <main class="max-w-4xl w-full mx-auto px-4 sm:px-6 pb-24 flex-grow">
+        <div id="booking-card" class="glass-panel rounded-2xl p-4 sm:p-8 shadow-2xl relative overflow-hidden">
+            
+            <!-- SaaS Layout Progress Step Navigation Bar -->
+            <div class="grid grid-cols-2 gap-4 border-b border-white/5 pb-6 mb-8">
+                <div id="tab-step1" class="flex items-center gap-3 border-b-2 border-indigo-500 pb-3 transition-all duration-300">
+                    <span id="badge-step1" class="h-6 w-6 rounded-md bg-indigo-500 text-white text-[11px] font-bold flex items-center justify-center shadow-md shadow-indigo-500/20">01</span>
+                    <div class="text-left">
+                        <p class="text-[10px] uppercase tracking-wider text-indigo-400 font-semibold">Step One</p>
+                        <p class="text-xs sm:text-sm font-semibold text-white">Select Timeline</p>
+                    </div>
+                </div>
+                <div id="tab-step2" class="flex items-center gap-3 border-b-2 border-transparent pb-3 opacity-40 transition-all duration-300">
+                    <span id="badge-step2" class="h-6 w-6 rounded-md bg-white/10 text-slate-300 text-[11px] font-bold flex items-center justify-center">02</span>
+                    <div class="text-left">
+                        <p class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Step Two</p>
+                        <p class="text-xs sm:text-sm font-semibold text-slate-300">Secure Payment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERACTIVE INTERFACE SWITCHBOARD -->
+            <div>
+                <!-- VIEWPORT 1: HIGH FIDELITY SCHEDULER VIEW -->
+                <div id="calendar-view" class="space-y-6 animate-fadeIn">
+                    <!-- Discreet Factual Price Layout Positioning -->
+                    <div class="flex items-center justify-between bg-white/[0.02] border border-white/5 rounded-xl px-4 py-3 text-xs">
+                        <span class="text-slate-400"><i class="fa-regular fa-clock mr-1.5 text-indigo-400"></i> Standard Session Placement Rate:</span>
+                        <span class="font-bold text-white tracking-wide">£25.00 / hr</span>
+                    </div>
+
+                    <div class="w-full h-[550px] overflow-scroll rounded-xl border border-white/5 bg-black/10 relative" id="free-calendar-box">
+                        <iframe src="https://cal.com/y.-l.-gluck-e1uomb" class="w-full h-full border-0 absolute inset-0" allow="calendar"></iframe>
+                    </div>
+                    
+                    <button onclick="proceedToCheckout()" class="group w-full bg-white hover:bg-slate-100 text-slate-950 font-bold py-4 rounded-xl text-center shadow-lg transition-all cursor-pointer flex items-center justify-center gap-2 text-sm">
+                        I Have Selected My Time Slot: Proceed to Payment 
+                        <i class="fa-solid fa-arrow-right text-[11px] transition-transform group-hover:translate-x-1"></i>
+                    </button>
+                </div>
+
+                <!-- VIEWPORT 2: ITEMISED INVOICE CHECKOUT ROUTER -->
+                <div id="payment-view" class="hidden text-center py-8 space-y-8 max-w-md mx-auto animate-fadeIn">
+                    <div class="h-16 w-16 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-2xl flex items-center justify-center text-2xl mx-auto shadow-inner">
+                        <i class="fa-solid fa-shield-inverse"></i>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold text-white tracking-tight">Final Step: Secure Checkout</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed max-w-xs mx-auto">
+                            Your reservation is currently held. Finalise registration via our encrypted terminal to secure your timeline.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/[0.02] border border-white/5 rounded-xl divide-y divide-white/5 text-left text-xs">
+                        <div class="p-3.5 flex justify-between items-center">
+                            <span class="text-slate-400">Academic Coaching Session (1 Hour)</span>
+                            <span class="text-white font-medium">£25.00</span>
+                        </div>
+                        <div class="p-3.5 flex justify-between items-center bg-white/[0.01]">
+                            <span class="text-slate-300 font-semibold">Total Amount Due</span>
+                            <span class="text-indigo-400 font-bold text-sm">£25.00</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-500/5 border border-amber-500/10 rounded-xl p-3.5 flex gap-3 text-left">
+                        <i class="fa-solid fa-circle-exclamation text-amber-400 text-xs mt-0.5"></i>
+                        <p class="text-[11px] text-amber-200/70 leading-relaxed">
+                            <span class="font-medium text-amber-300">Scheduling Policy:</span> To preserve operational calendar structure for all candidate students, unpaid requests will automatic-void if payment transaction drops or fails.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <a href="PASTE_YOUR_FREE_STRIPE_PAYMENT_LINK_HERE" target="_blank" onclick="showCompletionAlert()" class="block w-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-indigo-500/10 transition-all text-sm">
+                            Open Secure Payment Form
+                        </a>
+                        
+                        <button onclick="goBackToCalendar()" class="text-xs font-medium text-slate-400 hover:text-slate-300 transition-colors underline block mx-auto cursor-pointer">
+                            Modify Selected Time Slot
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-6 text-center text-[11px] text-slate-500">
+        &copy; 2026 Apex Academic Tuition Services. All rights reserved. Encrypted 256-bit gateway processing.
+    </footer>
+
+    <script>
+        function proceedToCheckout() {
+            document.getElementById('calendar-view').classList.add('hidden');
+            document.getElementById('payment-view').classList.remove('hidden');
+            
+            // Toggle Dynamic Horizontal Tab Active Navigation Classes
+            document.getElementById('tab-step1').className = "flex items-center gap-3 border-b-2 border-transparent pb-3 opacity-40 transition-all duration-300";
+            document.getElementById('tab-step2').className = "flex items-center gap-3 border-b-2 border-indigo-500 pb-3 transition-all duration-300";
+            
+            document.getElementById('badge-step1').className = "h-6 w-6 rounded-md bg-white/10 text-slate-300 text-[11px] font-bold flex items-center justify-center";
+            document.getElementById('badge-step2').className = "h-6 w-6 rounded-md bg-indigo-500 text-white text-[11px] font-bold flex items-center justify-center shadow-md shadow-indigo-500/20";
+            
+            // Smoothly scroll window context to card layout origin anchor point
+            document.getElementById('booking-card').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function goBackToCalendar() {
+            document.getElementById('payment-view').classList.add('hidden');
+            document.getElementById('calendar-view').classList.remove('hidden');
+            
+            document.getElementById('tab-step1').className = "flex items-center gap-3 border-b-2 border-indigo-500 pb-3 transition-all duration-300";
+            document.getElementById('tab-step2').className = "flex items-center gap-3 border-b-2 border-transparent pb-3 opacity-40 transition-all duration-300";
+            
+            document.getElementById('badge-step1').className = "h-6 w-6 rounded-md bg-indigo-500 text-white text-[11px] font-bold flex items-center justify-center shadow-md shadow-indigo-500/20";
+            document.getElementById('badge-step2').className = "h-6 w-6 rounded-md bg-white/10 text-slate-300 text-[11px] font-bold flex items-center justify-center";
+            
+            document.getElementById('booking-card').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showCompletionAlert() {
+            alert("Your protected payment terminal has been launched in a new tab. Once authentication clears successfully, your selected appointment block will lock directly into our master schedule!");
+        }
+    </script>
+</body>
+</html>
